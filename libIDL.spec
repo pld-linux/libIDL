@@ -1,8 +1,8 @@
 Summary:	Library for parsing IDL (Interface Definition Language)
 Summary(pl):	Biblioteka do parsowania IDL (jêzyka definicji interfejsu)
 Name:		libIDL
-Version:	0.7.4
-Release:	3
+Version:	0.8.0
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/pre-gnome2/sources/libIDL/%{name}-%{version}.tar.bz2
@@ -76,8 +76,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
 
-gzip -9 AUTHORS README NEWS
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -96,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc *gz
+%doc AUTHORS README NEWS
 %attr(755,root,root) %{_bindir}/libIDL-config-2
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
