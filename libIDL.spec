@@ -5,7 +5,7 @@ Version:	0.8.0
 Release:	4
 License:	LGPL
 Group:		Libraries
-Source0:	ftp://ftp.gnome.org/pub/GNOME/pre-gnome2/sources/libIDL/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/libIDL/0.8/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-info.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -91,11 +91,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS README NEWS
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc AUTHORS README NEWS
+%doc ChangeLog
 %attr(755,root,root) %{_bindir}/libIDL-config-2
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
