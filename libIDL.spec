@@ -31,7 +31,7 @@ CORBA.
 Summary:	Header files for libIDL
 Summary(pl):	Pliki nag³ówkowe libIDL
 Group:		Development/Libraries
-Requires:	%{name} >= %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 2.2.0
 Requires:	pkgconfig >= 0.8
 
@@ -50,7 +50,7 @@ programów u¿ywaj±cych libIDL.
 Summary:	Static libIDL libraries
 Summary(pl):	Statyczne biblioteki libIDL
 Group:		Development/Libraries
-Requires:	%{name}-devel >= %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libIDL libraries.
