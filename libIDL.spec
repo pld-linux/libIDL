@@ -1,17 +1,18 @@
 Summary:	Library for parsing IDL (Interface Definition Language)
 Summary(pl):	Biblioteka do parsowania IDL (jêzyka definicji interfejsu)
 Name:		libIDL
-Version:	0.8.0
-Release:	4
+Version:	0.8.2
+Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	ftp://ftp.gnome.org/pub/GNOME/pre-gnome2/sources/libIDL/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.8/%{name}-%{version}.tar.bz2
+# Source0-md5:	a75d2dbf3a3c66b567047c94245f8b82
 Patch0:		%{name}-info.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
 BuildRequires:	flex
-BuildRequires:	glib2-devel >= 2.0.0
+BuildRequires:	glib2-devel >= 2.0.6
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.8
 BuildRequires:	texinfo
@@ -64,7 +65,7 @@ Statyczne biblioteki libIDL.
 %build
 rm -f missing
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure
@@ -98,7 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README NEWS
 %attr(755,root,root) %{_bindir}/libIDL-config-2
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
+%{_libdir}/lib*.la
 %{_includedir}/*
 %{_pkgconfigdir}/*
 %{_infodir}/*info*
