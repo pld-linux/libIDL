@@ -1,14 +1,15 @@
 Summary:	Library for parsing IDL (Interface Definition Language)
 Summary(pl):	Biblioteka do parsowania IDL (jêzyka definicji interfejsu)
 Name:		libIDL
-Version:	0.7.3
-Release:	2
+Version:	0.7.4
+Release:	1
 License:	LGPL
 Group:		Libraries
-Group(de):	Libraries
+Group(de):	Bibliotheken
 Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
+Group(pt):	Bibliotecas
 Group(pt_BR):	Bibliotecas
 Group(ru):	âÉÂÌÉÏÔÅËÉ
 Group(uk):	â¦ÂÌ¦ÏÔÅËÉ
@@ -30,17 +31,18 @@ It can be used for both COM-style and CORBA-style IDL.
 %description -l pl
 libIDL to biblioteka do parsowania IDL (Interface Definition Language
 - jêzyka definicji interfejsu). Mo¿e byæ u¿ywana z IDL w stylu COM lub
-CORBA.
+  CORBA.
 
 %package devel
 Summary:	Header files for libIDL
 Summary(pl):	Pliki nag³ówkowe libIDL
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
+Group(de):	Entwicklung/Bibliotheken
 Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(pt):	Desenvolvimento/Bibliotecas
 Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
 Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name} >= %{version}
@@ -62,11 +64,12 @@ programów u¿ywaj±cych libIDL.
 Summary:	Static libIDL libraries
 Summary(pl):	Statyczne biblioteki libIDL
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
+Group(de):	Entwicklung/Bibliotheken
 Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(pt):	Desenvolvimento/Bibliotecas
 Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
 Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name}-devel >= %{version}
