@@ -2,7 +2,7 @@ Summary:	Library for parsing IDL (Interface Definition Language)
 Summary(pl):	Biblioteka do parsowania IDL (jêzyka definicji interfejsu)
 Name:		libIDL
 Version:	0.7.4
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Group(de):	Bibliotheken
@@ -18,7 +18,7 @@ Patch0:		%{name}-info.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
-BuildRequires:	glib2-devel >= 1.3.13
+BuildRequires:	glib2-devel >= 1.3.14
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.8
 BuildRequires:	texinfo
