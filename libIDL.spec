@@ -10,6 +10,7 @@ Patch0:		%{name}-info.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
+BuildRequires:	flex
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.8
@@ -23,7 +24,7 @@ It can be used for both COM-style and CORBA-style IDL.
 %description -l pl
 libIDL to biblioteka do parsowania IDL (Interface Definition Language
 - jêzyka definicji interfejsu). Mo¿e byæ u¿ywana z IDL w stylu COM lub
-  CORBA.
+CORBA.
 
 %package devel
 Summary:	Header files for libIDL
