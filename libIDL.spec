@@ -1,12 +1,12 @@
 Summary:	Library for parsing IDL (Interface Definition Language)
 Summary(pl):	Biblioteka do parsowania IDL (jêzyka definicji interfejsu)
 Name:		libIDL
-Version:	0.8.3
+Version:	0.8.4
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/0.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	39640ea026d81e721b0c78a8aaeb7d59
+# Source0-md5:	f94a690454b4f9d448c2e51792f81365
 Patch0:		%{name}-info.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
