@@ -5,7 +5,7 @@ Version:	0.8.0
 Release:	4
 License:	LGPL
 Group:		Libraries
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/libIDL/0.8/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/0.8/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-info.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -24,7 +24,7 @@ It can be used for both COM-style and CORBA-style IDL.
 %description -l pl
 libIDL to biblioteka do parsowania IDL (Interface Definition Language
 - jêzyka definicji interfejsu). Mo¿e byæ u¿ywana z IDL w stylu COM lub
-CORBA.
+  CORBA.
 
 %package devel
 Summary:	Header files for libIDL
