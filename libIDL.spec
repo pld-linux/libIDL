@@ -1,96 +1,114 @@
-%define glib_version 1.3.12.90
-
-Summary: Library for parsing IDL (Interface Definition Language)
-Name: libIDL
-Version: 0.7.1.91
-Release: 1
-Source: ftp://ftp.gnome.org/pub/GNOME/pre-gnome2/sources/libIDL/%{name}-%{version}.tar.gz
-Group: System Environment/Libraries
-License: LGPL
-BuildRoot: %{_tmppath}/%{name}-%{version}-root
-BuildRequires: pkgconfig >= 0.8
-BuildRequires: glib2-devel >= %{glib_version}
-
+Summary:	Library for parsing IDL (Interface Definition Language)
+Name:		libIDL
+Version:	0.7.2
+Release:	1
+License:	LGPL
+Source0:	ftp://ftp.gnome.org/pub/GNOME/pre-gnome2/sources/libIDL/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-info.patch
+Group:		Libraries
+Group(de):	Libraries
+Group(es):	Bibliotecas
+Group(fr):	Librairies
+Group(pl):	Biblioteki
+Group(pt_BR):	Bibliotecas
+Group(ru):	Библиотеки
+Group(uk):	Б╕бл╕отеки
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	bison
+BuildRequires:	glib2-devel >= 1.3.12
+BuildRequires:	libtool
+BuildRequires:	pkgconfig >= 0.8
+BuildRequires:	texinfo
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-
-libIDL is a library for parsing IDL (Interface Definition Language). 
+libIDL is a library for parsing IDL (Interface Definition Language).
 It can be used for both COM-style and CORBA-style IDL.
 
 %package devel
-Summary: Development libraries and header files for libIDL
-Group: Development/Libraries
-Requires: libIDL = %{version}
-Requires: pkgconfig >= 0.8
-Requires: glib2-devel >= %{glib_version}
+Summary:	Development libraries and header files for libIDL
+Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
+Requires:	%{name} >= %{version}
+Requires:	pkgconfig >= 0.8
+Requires:	glib2-devel
 
 %description devel
-
-
-libIDL is a library for parsing IDL (Interface Definition Language). 
+libIDL is a library for parsing IDL (Interface Definition Language).
 It can be used for both COM-style and CORBA-style IDL.
 
-This package contains the header files and libraries needed to write 
+This package contains the header files and libraries needed to write
 or compile programs that use libIDL.
 
+%package static
+Summary:	Static libIDL libraries
+Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
+Requires:	%{name}-devel >= %{version}
+
+%description static
+Static libIDL libraries.
+
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
+%patch0 -p1
 
 %build
+rm -f missing
+libtoolize --copy --force
+aclocal
+autoconf
+automake -a -c
 %configure
-make %{?_smp_mflags}
+%{__make}
 
 %install
-rm -rf %{buildroot}
-%makeinstall
+rm -rf $RPM_BUILD_ROOT
 
-gzip -9 %{buildroot}%{_infodir}/*
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
+gzip -9 AUTHORS README NEWS
 
+%post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
 %post devel
-/sbin/install-info %{_infodir}/libIDL2.info.gz %{_infodir}/dir
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%preun devel
-if [ $1 = 0 ]; then
-   /sbin/install-info --delete %{_infodir}/libIDL2.info.gz %{_infodir}/dir
-fi
+%postun devel
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1                                                    
 
 %clean
-rm -rf %{buildroot}
+rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
-
-%{_includedir}/*
-%{_libdir}/lib*.so.*
-
-%doc AUTHORS COPYING README NEWS
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
-%defattr(-,root,root)
-
-%{_libdir}/lib*.so
-%{_libdir}/*a
+%defattr(644,root,root,755)
+%doc *gz
+%attr(755,root,root) %{_bindir}/libIDL-config-2
+%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.la
+%{_includedir}/*
 %{_libdir}/pkgconfig/*
-%{_bindir}/libIDL-config-2
-%{_infodir}/libIDL2.info.gz
+%{_infodir}/*info*
 
-%changelog
-* Wed Jan  2 2002 Havoc Pennington <hp@redhat.com>
-- cvs snap 0.7.1.91
-
-* Sun Nov 25 2001 Havoc Pennington <hp@redhat.com>
-- cvs snap, rebuild on new glib 1.3.11
-
-* Fri Oct 26 2001 Havoc Pennington <hp@redhat.com>
-- glib 1.3.10
-
-* Thu Oct  4 2001 Havoc Pennington <hp@redhat.com>
-- rebuild for new glib
-
-* Thu Sep 27 2001 Havoc Pennington <hp@redhat.com>
-- initial build of standalone libIDL
-- fix braindamage
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
