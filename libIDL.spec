@@ -6,6 +6,7 @@ Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/0.8/%{name}-%{version}.tar.bz2
+# Source0-md5: 5e6619791a7e2b8ce4a3c75d0ccdde1d
 Patch0:		%{name}-info.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
