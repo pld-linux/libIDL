@@ -33,7 +33,6 @@ Summary(pl):	Pliki nag³ówkowe libIDL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 2.2.0
-Requires:	pkgconfig >= 0.8
 
 %description devel
 libIDL is a library for parsing IDL (Interface Definition Language).
@@ -63,7 +62,6 @@ Statyczne biblioteki libIDL.
 %patch0 -p1
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
