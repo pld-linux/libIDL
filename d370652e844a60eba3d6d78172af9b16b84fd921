@@ -1,0 +1,5 @@
+- rewrited in PLD style,
+- updated to 0.7.2,
+- switch to bzipped2 tar ball.
+
+Based on spec from RH.
