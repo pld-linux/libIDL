@@ -1,7 +1,7 @@
 Summary:	Library for parsing IDL (Interface Definition Language)
 Summary(pl):	Biblioteka do parsowania IDL (jêzyka definicji interfejsu)
 Name:		libIDL
-Version:	0.7.2
+Version:	0.7.3
 Release:	2
 License:	LGPL
 Group:		Libraries
@@ -17,7 +17,7 @@ Patch0:		%{name}-info.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
-BuildRequires:	glib2-devel >= 1.3.12
+BuildRequires:	glib2-devel >= 1.3.13
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.8
 BuildRequires:	texinfo
@@ -94,7 +94,8 @@ automake -a -c
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	pkgconfigdir=%{_pkgconfigdir}
 
 gzip -9 AUTHORS README NEWS
 
@@ -121,7 +122,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/*
-%{_libdir}/pkgconfig/*
+%{_pkgconfigdir}/*
 %{_infodir}/*info*
 
 %files static
