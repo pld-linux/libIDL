@@ -1,0 +1,15 @@
+--- libIDL-0.7.2/libIDL2.texi~	Sun Jan 13 19:52:28 2002
++++ libIDL-0.7.2/libIDL2.texi	Sun Jan 13 19:52:28 2002
+@@ -4,9 +4,10 @@
+ @setchapternewpage odd
+ 
+ @ifinfo
+-@dircategory Libraries
++@dircategory Libraries:
+ @direntry
+-* libIDL2: (libIDL2).     Interface Definition Language parsing library.
++* libIDL2: (libIDL2).			Interface Definition Language
++					parsing library
+ @end direntry
+ 
+ Copyright 1998 Andrew T. Veliath
