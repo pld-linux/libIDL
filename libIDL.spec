@@ -1,10 +1,9 @@
 Summary:	Library for parsing IDL (Interface Definition Language)
+Summary(pl):	Biblioteka do parsowania IDL (jêzyka definicji interfejsu)
 Name:		libIDL
 Version:	0.7.2
-Release:	1
+Release:	2
 License:	LGPL
-Source0:	ftp://ftp.gnome.org/pub/GNOME/pre-gnome2/sources/libIDL/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-info.patch
 Group:		Libraries
 Group(de):	Libraries
 Group(es):	Bibliotecas
@@ -13,6 +12,8 @@ Group(pl):	Biblioteki
 Group(pt_BR):	Bibliotecas
 Group(ru):	âÉÂÌÉÏÔÅËÉ
 Group(uk):	â¦ÂÌ¦ÏÔÅËÉ
+Source0:	ftp://ftp.gnome.org/pub/GNOME/pre-gnome2/sources/libIDL/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-info.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
@@ -26,8 +27,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 libIDL is a library for parsing IDL (Interface Definition Language).
 It can be used for both COM-style and CORBA-style IDL.
 
+%description -l pl
+libIDL to biblioteka do parsowania IDL (Interface Definition Language
+- jêzyka definicji interfejsu). Mo¿e byæ u¿ywana z IDL w stylu COM lub
+CORBA.
+
 %package devel
-Summary:	Development libraries and header files for libIDL
+Summary:	Header files for libIDL
+Summary(pl):	Pliki nag³ówkowe libIDL
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(es):	Desarrollo/Bibliotecas
@@ -47,8 +54,13 @@ It can be used for both COM-style and CORBA-style IDL.
 This package contains the header files and libraries needed to write
 or compile programs that use libIDL.
 
+%description devel -l pl
+Ten pakiet zawiera pliki nag³ówkowe potrzebne do kompilowania
+programów u¿ywaj±cych libIDL.
+
 %package static
 Summary:	Static libIDL libraries
+Summary(pl):	Statyczne biblioteki libIDL
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(es):	Desarrollo/Bibliotecas
@@ -61,6 +73,9 @@ Requires:	%{name}-devel >= %{version}
 
 %description static
 Static libIDL libraries.
+
+%description static -l pl
+Statyczne biblioteki libIDL.
 
 %prep
 %setup -q
@@ -83,6 +98,9 @@ rm -rf $RPM_BUILD_ROOT
 
 gzip -9 AUTHORS README NEWS
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
@@ -90,10 +108,7 @@ gzip -9 AUTHORS README NEWS
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun devel
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1                                                    
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %files
 %defattr(644,root,root,755)
