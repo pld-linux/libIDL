@@ -14,7 +14,7 @@ BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	glib2-devel >= 2.2.0
 BuildRequires:	libtool
-BuildRequires:	pkgconfig >= 0.8
+BuildRequires:	pkgconfig >= 1:0.8
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
