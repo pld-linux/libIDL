@@ -99,7 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog
 %attr(755,root,root) %{_bindir}/libIDL-config-2
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
+%{_libdir}/lib*.la
 %{_includedir}/*
 %{_pkgconfigdir}/*
 %{_infodir}/*info*
