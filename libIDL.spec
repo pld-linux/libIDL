@@ -25,15 +25,15 @@ It can be used for both COM-style and CORBA-style IDL.
 %description -l pl
 libIDL to biblioteka do parsowania IDL (Interface Definition Language
 - jêzyka definicji interfejsu). Mo¿e byæ u¿ywana z IDL w stylu COM lub
-  CORBA.
+CORBA.
 
 %package devel
 Summary:	Header files for libIDL
 Summary(pl):	Pliki nag³ówkowe libIDL
 Group:		Development/Libraries
 Requires:	%{name} >= %{version}
-Requires:	pkgconfig >= 0.8
 Requires:	glib2-devel
+Requires:	pkgconfig >= 0.8
 
 %description devel
 libIDL is a library for parsing IDL (Interface Definition Language).
