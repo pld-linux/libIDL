@@ -1,5 +1,5 @@
 Summary:	Library for parsing IDL (Interface Definition Language)
-Summary(pl):	Biblioteka do parsowania IDL (jÍzyka definicji interfejsu)
+Summary(pl.UTF-8):   Biblioteka do parsowania IDL (jƒôzyka definicji interfejsu)
 Name:		libIDL
 Version:	0.8.7
 Release:	2
@@ -22,14 +22,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 libIDL is a library for parsing IDL (Interface Definition Language).
 It can be used for both COM-style and CORBA-style IDL.
 
-%description -l pl
+%description -l pl.UTF-8
 libIDL to biblioteka do parsowania IDL (Interface Definition Language
-- jÍzyka definicji interfejsu). Moøe byÊ uøywana z IDL w stylu COM lub
+- jƒôzyka definicji interfejsu). Mo≈ºe byƒá u≈ºywana z IDL w stylu COM lub
 CORBA.
 
 %package devel
 Summary:	Header files for libIDL
-Summary(pl):	Pliki nag≥Ûwkowe libIDL
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe libIDL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.12.1
@@ -41,20 +41,20 @@ It can be used for both COM-style and CORBA-style IDL.
 This package contains the header files and libraries needed to write
 or compile programs that use libIDL.
 
-%description devel -l pl
-Ten pakiet zawiera pliki nag≥Ûwkowe potrzebne do kompilowania
-programÛw uøywaj±cych libIDL.
+%description devel -l pl.UTF-8
+Ten pakiet zawiera pliki nag≈Ç√≥wkowe potrzebne do kompilowania
+program√≥w u≈ºywajƒÖcych libIDL.
 
 %package static
 Summary:	Static libIDL libraries
-Summary(pl):	Statyczne biblioteki libIDL
+Summary(pl.UTF-8):   Statyczne biblioteki libIDL
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libIDL libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki libIDL.
 
 %prep
