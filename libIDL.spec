@@ -1,5 +1,5 @@
 Summary:	Library for parsing IDL (Interface Definition Language)
-Summary(pl.UTF-8):   Biblioteka do parsowania IDL (języka definicji interfejsu)
+Summary(pl.UTF-8):	Biblioteka do parsowania IDL (języka definicji interfejsu)
 Name:		libIDL
 Version:	0.8.7
 Release:	2
@@ -29,7 +29,7 @@ CORBA.
 
 %package devel
 Summary:	Header files for libIDL
-Summary(pl.UTF-8):   Pliki nagłówkowe libIDL
+Summary(pl.UTF-8):	Pliki nagłówkowe libIDL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.12.1
@@ -47,7 +47,7 @@ programów używających libIDL.
 
 %package static
 Summary:	Static libIDL libraries
-Summary(pl.UTF-8):   Statyczne biblioteki libIDL
+Summary(pl.UTF-8):	Statyczne biblioteki libIDL
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
