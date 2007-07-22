@@ -1,3 +1,6 @@
+# Conditional build:
+%bcond_without	static_libs	# don't build static library
+#
 Summary:	Library for parsing IDL (Interface Definition Language)
 Summary(pl.UTF-8):	Biblioteka do parsowania IDL (języka definicji interfejsu)
 Name:		libIDL
@@ -66,7 +69,8 @@ Statyczne biblioteki libIDL.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	%{!?with_static_libs:--disable-static}
 %{__make}
 
 %install
@@ -103,6 +107,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/*
 %{_infodir}/*info*
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+%endif
