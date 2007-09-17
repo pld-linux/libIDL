@@ -5,18 +5,18 @@
 Summary:	Library for parsing IDL (Interface Definition Language)
 Summary(pl.UTF-8):	Biblioteka do parsowania IDL (języka definicji interfejsu)
 Name:		libIDL
-Version:	0.8.8
+Version:	0.8.9
 Release:	1
-License:	LGPL
+License:	LGPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libIDL/0.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	187c17f42533d76da435e90afb7b48cf
+# Source0-md5:	a4f84903e289bb874ae2fbe92d80e656
 Patch0:		%{name}-info.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
 BuildRequires:	flex
-BuildRequires:	glib2-devel >= 1:2.12.9
+BuildRequires:	glib2-devel >= 1:2.14.1
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.8
 BuildRequires:	texinfo
@@ -36,7 +36,7 @@ Summary:	Header files for libIDL
 Summary(pl.UTF-8):	Pliki nagłówkowe libIDL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.12.9
+Requires:	glib2-devel >= 1:2.14.1
 
 %description devel
 libIDL is a library for parsing IDL (Interface Definition Language).
