@@ -12,6 +12,7 @@ Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libIDL/0.8/%{name}-%{version}.tar.bz2
 # Source0-md5:	a4f84903e289bb874ae2fbe92d80e656
 Patch0:		%{name}-info.patch
+URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
@@ -96,20 +97,20 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS README NEWS
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libIDL-2.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
 %doc ChangeLog
 %attr(755,root,root) %{_bindir}/libIDL-config-2
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*
-%{_pkgconfigdir}/*
-%{_infodir}/*info*
+%attr(755,root,root) %{_libdir}/libIDL-2.so
+%{_libdir}/libIDL-2.la
+%{_includedir}/libIDL-2.0
+%{_pkgconfigdir}/libIDL-2.0.pc
+%{_infodir}/libIDL2.info*
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libIDL-2.a
 %endif
