@@ -5,14 +5,14 @@
 Summary:	Library for parsing IDL (Interface Definition Language)
 Summary(pl.UTF-8):	Biblioteka do parsowania IDL (języka definicji interfejsu)
 Name:		libIDL
-Version:	0.8.13
+Version:	0.8.14
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libIDL/0.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	b43b289a859eb38a710f70622c46e571
+# Source0-md5:	bb8e10a218fac793a52d404d14adedcb
 Patch0:		%{name}-info.patch
-URL:		http://www.gnome.org/
+URL:		http://projects.gnome.org/ORBit2/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	bison
@@ -72,6 +72,7 @@ Statyczne biblioteki libIDL.
 %{__autoconf}
 %{__automake}
 %configure \
+	--disable-silent-rules \
 	%{!?with_static_libs:--disable-static}
 %{__make}
 
@@ -88,10 +89,10 @@ rm -rf $RPM_BUILD_ROOT
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-%post devel	-p	/sbin/postshell
+%post	devel -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun devel	-p	/sbin/postshell
+%postun	devel -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
