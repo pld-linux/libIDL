@@ -6,13 +6,13 @@ Summary:	Library for parsing IDL (Interface Definition Language)
 Summary(pl.UTF-8):	Biblioteka do parsowania IDL (języka definicji interfejsu)
 Name:		libIDL
 Version:	0.8.14
-Release:	7
+Release:	8
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libIDL/0.8/%{name}-%{version}.tar.bz2
 # Source0-md5:	bb8e10a218fac793a52d404d14adedcb
 Patch0:		%{name}-info.patch
-URL:		http://projects.gnome.org/ORBit2/
+URL:		https://projects-old.gnome.org/ORBit2/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	bison
@@ -80,8 +80,10 @@ Statyczne biblioteki libIDL.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir}
+	DESTDIR=$RPM_BUILD_ROOT
+
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libIDL-2.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -97,16 +99,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README NEWS
+%doc AUTHORS ChangeLog README NEWS
 %attr(755,root,root) %{_libdir}/libIDL-2.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libIDL-2.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%doc ChangeLog
 %attr(755,root,root) %{_bindir}/libIDL-config-2
 %attr(755,root,root) %{_libdir}/libIDL-2.so
-%{_libdir}/libIDL-2.la
 %{_includedir}/libIDL-2.0
 %{_pkgconfigdir}/libIDL-2.0.pc
 %{_infodir}/libIDL2.info*
